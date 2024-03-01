@@ -7,4 +7,4 @@ from blog.models import Post
 # Create your views here.
 def post_list(request):
     posts = Post.objects.all()
-    return HttpResponse("Kajtek potrzebuje pomocy")
+    return render(request, "blog/post/list.html")
