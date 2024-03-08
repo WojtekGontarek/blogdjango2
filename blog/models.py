@@ -3,7 +3,15 @@ from django.db import models
 from django.utils import timezone
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager, self).get_queryset().filter(status='published')
+
 class Post(models.Model):
+    # menadzery obiketow
+    objects = models.Manager()
+    published = PublishedManager()
+
     title = models.CharField(max_length=250)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
