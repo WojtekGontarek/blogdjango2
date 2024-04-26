@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "notes/base.html" %}
 
 {% block title %}Mój blog {% endblock %}
 
@@ -9,5 +9,5 @@
         <p class="date">Opublikowany {{ post.publish }} przez {{ post.author }}</p>
         {{ post.body|truncatewords:30|linebreaks }}
     {% endfor %}
-    {% include "blog/pagination.html" with page=page_obj %}
+    {% include "notes/pagination.html" with page=page_obj %}
 {% endblock %}

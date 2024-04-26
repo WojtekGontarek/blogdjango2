@@ -1,8 +1,8 @@
 from django.urls import path
 
-from blog import views
+from site import views
 
-app_name = 'blog'
+app_name = 'site'
 
 urlpatterns = [
     # path('', views.post_list, name='post_list'),
